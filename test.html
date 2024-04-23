@@ -1,28 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
-  <style>.orblock{background-color: orange;margin: 10px;color: white}
-  .blublock{background-color: #0a53be;padding: 10px;margin:5px;color: white}
-  .orblock1{background-color: #0a58ca}
-  </style>
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <style type="text/css">
+         .red{
+         color:red;
+         }
+         .green{
+         color:green;
+         }
+         </style>
+  <meta charset="UTF-8">
+  <title>Title</title>
   <link rel="stylesheet" href="css/bootstrap.css">
+
 </head>
 <body>
-<div class="container">
-  <div class="row">
-    <div class="col-5 blublock">123</div>
-    <div class="col-6 blublock">
-      <div class="row">
-        <div class="col-5 orblock">a</div>
-        <div class="col-5 orblock">b</div>
-        <div class="col-5 orblock">c</div>
-        <div class="col-5 orblock">d</div>
-      </div>
-      </div>
-    <div class="row">
-      <div class="col-lg-4 col-md-12 orblock1">456</div>
-      <div class="offset-8 col-lg-4 col-md-12 orblock1">123</div>
+<p class="red">red</p>
+<p id="w" class="red">white</p>
+<p id="g">green</p>
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+<script>
+  $( "#red" ).addClass( "red" );
+  $( "#w" ).removeClass( "red" );
+  $( "#g" ).addClass( "green" );
+</script>
 </body>
 </html>
