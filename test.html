@@ -7,25 +7,53 @@
 
     </head>
     <body>
-    <p id="name">???</p>
-    <p id="hp">????</p>
-    <p id="mp">????</p>
+    <div class="row">
+        <div class="col-4">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="..." alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script type="text/javascript">
-        function injson (json){};
-        $(function (){
-            var url="https://openapi.twse.com.tw/v1/opendata/t187ap02_L";
-            $.ajax({
-                url:url,
-                dataType:"json",
-                type:"get",
-                success:function (data,textStatus,jqXHR){
-                    console.log(JSON.stringify(data));
-                },
-                error: function (jqXHR,textStatus,errorThrown){
-                }
-            });
+    $(function (){
+        console.log("hello world");
+        var url = "https://memes.tw/wtf/api?contest=162"
+        $.ajax({
+            url: url,
+            dataType: "json",
+            type: "post",
+            data:data,
+            //Type: Function(Anything data, String textStatus, jqXHR jqXHR)
+            success: function(data, textStatus, jqXHR) {
+           //     console.log(JSON.stringify(data));
+                console.log(data[0].src);
+                console.log(data[0].author.name);
+                console.log(data[0].title);
+                var h5="        <div class=\"col-4\">\n" +
+                    "            <div class=\"card\" style=\"width: 18rem;\">\n" +
+                    "                <img class=\"card-img-top\" src="+data[0].src+" alt=\"Card image cap\">\n" +
+                    "                    <div class=\"card-body\">\n" +
+                    "                        <h5 class=\"card-title\">"+data[0].author.name+"</h5>\n" +
+                    "                        <p class=\"card-text\">"+data[0].title+"</p>\n" +
+                    "                        <a href=\"#\" class=\"btn btn-primary\">Go somewhere</a>\n" +
+                    "                </div>\n" +
+                    "            </div>\n" +
+                    "        </div>"
+
+            },
+            //Type: Function(jqXHR jqXHR, String textStatus, String errorThrown)
+            error: function(jqXHR, textStatus, errorThrown) {
+                console.log("fail");
+
+            }
         });
+    })
     </script>
     </body>
     </html>
